@@ -1,0 +1,37 @@
+header {
+    background-color: #fff;
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-family: sans-serif;
+    font-weight: bold;
+  }
+  
+  h3 {
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .card {
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+  }
+  
+  .author-text {
+    float: left;
+    width: 50%;
+    padding-left: 1rem;
+  }
+  
+  .author-image {
+    float: right;
+    width: 50%;
+  }
+  
+  .author {
+    display: flex;
+    align-items: center;
+  }
+  

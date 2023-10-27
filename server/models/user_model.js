@@ -36,6 +36,11 @@ const userSchema = new mongoose.Schema({
             message: 'Password cannot contain the word "password"'
         }
     },
+    role:{
+        type: String,
+        required: true,
+        default: 'user',
+    },
     tokens : [{
         token:{
             type: String,

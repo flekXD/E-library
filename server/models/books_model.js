@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const { string } = require('prop-types')
 const validator = require('validator')
 
 const BooksSchema = new mongoose.Schema({
@@ -20,20 +19,23 @@ const BooksSchema = new mongoose.Schema({
         require: true,
     },
     rating:{
-        //--------------
-    },
-    ISBN:{
-        type: String,
-        required: true
+        type: Number, 
+        default: 0,
     },
     img:{
         type : String,
-        required: true
+        required: false,
+        default: ""
     },
     download:{
         type: String ,
-        required: true
+        required: false,
+        default: ""
     },
+    Genres:[{
+        type : String,
+        required: true
+    }],
     creator:{
         type : mongoose.Schema.Types.ObjectId,
         ref: "Users",
@@ -47,7 +49,7 @@ const BooksSchema = new mongoose.Schema({
 })
 
 
-productSchema.methods.generateAuthToken = async function () {
+BooksSchema.methods.generateAuthToken = async function () {
 
     const product = this;
   
@@ -59,6 +61,11 @@ productSchema.methods.generateAuthToken = async function () {
   
     return token;
   };
+
+BooksSchema.methods.updateRating = function (newRating) {
+    this.rating = newRating;
+    return this.save();
+}
   
 const Books = mongoose.model('Books', BooksSchema);
 

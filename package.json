@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@mui/styles": "^5.14.15",
+    "redux-devtools-extension": "^2.13.9"
+  }
+}
